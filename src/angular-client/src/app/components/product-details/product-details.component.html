@@ -1,0 +1,233 @@
+<div class="container">
+  <div class="content">
+    <h1>Decoded details</h1>
+    <div *ngIf="loaded">
+      <div *ngIf="data['type_dimension'] == '1D' && product">
+        <div class="row">
+          <div class="col-md-6 info">
+            <div *ngIf="product['barcode_number']" class="info-item">
+              <strong>Barcode number:</strong>
+              {{product['barcode_number']}}
+            </div>
+            <div *ngIf="!product['error']">
+              <details *ngIf="product['barcode_number']">
+                <summary>
+                  <strong>Barcode details</strong>
+                </summary>
+                <div *ngIf="product['barcode_type']" class="details-item">
+                  <strong>Barcode type:</strong>
+                  {{product['barcode_type']}}
+                </div>
+                <div *ngIf="product['barcode_formats']" class="details-item">
+                  <strong>Barcode format:</strong>
+                  {{product['barcode_formats']}}
+                </div>
+                <div *ngIf="product['mpn']" class="details-item">
+                  <strong>MPN:</strong>
+                  {{product['mpn']}}
+                </div>
+                <div *ngIf="product['asin']" class="details-item">
+                  <strong>ASIN:</strong>
+                  {{product['asin']}}
+                </div>
+              </details>
+              <div *ngIf="product['model']" class="info-item">
+                <strong>Model:</strong>
+                {{product['model']}}
+              </div>
+              <div *ngIf="product['product_name']" class="info-item">
+                <strong>Product name:</strong>
+                {{product['product_name']}}
+              </div>
+              <div *ngIf="product['title']" class="info-item">
+                <strong>Title:</strong>
+                {{product['title']}}
+              </div>
+              <div *ngIf="product['category']" class="info-item">
+                <strong>Category:</strong>
+                {{product['category']}}
+              </div>
+              <div *ngIf="product['manufacturer']" class="info-item">
+                <strong>Manufacturer:</strong>
+                {{product['manufacturer']}}
+              </div>
+              <div *ngIf="product['brand']" class="info-item">
+                <strong>Brand:</strong>
+                {{product['brand']}}
+              </div>
+              <div *ngIf="product['label']" class="info-item">
+                <strong>Label:</strong>
+                {{product['label']}}
+              </div>
+              <div *ngIf="product['author']" class="info-item">
+                <strong>Author:</strong>
+                {{product['author']}}
+              </div>
+              <div *ngIf="product['publisher']" class="info-item">
+                <strong>Publisher:</strong>
+                {{product['publisher']}}
+              </div>
+              <div *ngIf="product['artist']" class="info-item">
+                <strong>Artist:</strong>
+                {{product['artist']}}
+              </div>
+              <div *ngIf="product['Actor']" class="info-item">
+                <strong>Actor:</strong>
+                {{product['Actor']}}
+              </div>
+              <div *ngIf="product['director']" class="info-item">
+                <strong>Director:</strong>
+                {{product['director']}}
+              </div>
+              <div *ngIf="product['studio']" class="info-item">
+                <strong>Studio:</strong>
+                {{product['studio']}}
+              </div>
+              <div *ngIf="product['genre']" class="info-item">
+                <strong>Genre:</strong>
+                {{product['genre']}}
+              </div>
+              <div *ngIf="product['director']" class="info-item">
+                <strong>Director:</strong>
+                {{product['director']}}
+              </div>
+              <div *ngIf="product['audience_rating']" class="info-item">
+                <strong>Audience rating:</strong>
+                {{product['audience_rating']}}
+              </div>
+              <div *ngIf="product['ingredients']" class="info-item">
+                <strong>Ingredients:</strong>
+                {{product['ingredients']}}
+              </div>
+              <div *ngIf="product['nutrition_facts']" class="info-item">
+                <strong>Nutrition facts:</strong>
+                {{product['nutrition_facts']}}
+              </div>
+              <div *ngIf="product['color']" class="info-item">
+                <strong>Color:</strong>
+                {{product['color']}}
+              </div>
+              <div *ngIf="product['package_quantity']" class="info-item">
+                <strong>Package quantity:</strong>
+                {{product['package_quantity']}}
+              </div>
+              <!--Sizes-->
+              <details
+                *ngIf="product['size'] || product['length'] || product['width'] || product['height'] || product['weight']">
+                <summary>
+                  <strong>Sizes</strong>
+                </summary>
+                <div *ngIf="product['size']" class="details-item">
+                  <strong>Size:</strong>
+                  {{product['size']}}
+                </div>
+                <div *ngIf="product['length'] && product['width'] && product['height']" class="details-item">
+                  <strong>Dimensions:</strong>
+                  {{product['length']}}x{{product['width']}}x{{product['height']}}
+                </div>
+                <div *ngIf="product['weight']" class="details-item">
+                  <strong>Weight:</strong>
+                  {{product['weight']}}
+                </div>
+              </details>
+              <div *ngIf="product['release_date']" class="info-item">
+                <strong>Release date:</strong>
+                {{product['release_date']}}
+              </div>
+              <!--Description-->
+              <details *ngIf="product['description']">
+                <summary>
+                  <strong>Description</strong>
+                </summary>
+                <p>{{product['description']}}</p>
+              </details>
+              <!--Features-->
+              <details *ngIf="product['features'] != ''">
+                <summary>
+                  <strong>Features</strong>
+                </summary>
+                <div *ngFor="let feature of product['features']" class="details-item">
+                  - {{feature}}
+                </div>
+              </details>
+              <!--Stores-->
+              <details *ngIf="product['stores'] != ''">
+                <summary>
+                  <strong>Stores</strong>
+                </summary>
+                <div *ngFor="let store of product['stores']" class="info-item">
+                  <div *ngIf="store['store_name']" class="details-item">
+                    <strong>Store name:</strong>
+                    {{store['store_name']}}
+                  </div>
+                  <div *ngIf="store['store_price']" class="details-item">
+                    <strong>Store price:</strong>
+                    {{store['store_price']}}{{store['currency_symbol']}} ({{store['currency_code']}})
+                  </div>
+                  <div *ngIf="store['product_url']" class="details-item">
+                    <strong>Product URL: </strong>
+                    <a href="{{store['product_url']}}">Link</a>
+                  </div>
+                </div>
+              </details>
+              <!--Reviews-->
+              <details *ngIf="product['reviews'] != ''">
+                <summary>
+                  <strong>Reviews</strong>
+                </summary>
+                <div *ngFor="let review of product['reviews']" class="info-item">
+                  <div *ngIf="review['name']" class="details-item">
+                    <strong>Review name:</strong>
+                    {{review['name']}}
+                  </div>
+                  <div *ngIf="review['rating']" class="details-item">
+                    <strong>Rating:</strong>
+                    {{review['rating']}}
+                  </div>
+                  <div *ngIf="review['title']" class="details-item">
+                    <strong>Title:</strong>
+                    {{review['title']}}
+                  </div>
+                  <div *ngIf="review['review']" class="details-item">
+                    <strong>Review:</strong>
+                    {{review['review']}}
+                  </div>
+                  <div *ngIf="review['datetime']" class="details-item">
+                    <strong>Date:</strong>
+                    {{review['datetime']}}
+                  </div>
+                </div>
+              </details>
+            </div>
+            <div *ngIf="product['error']" class="info-item">
+              {{product['error']}}
+            </div>
+
+          </div>
+
+          <div class="col-md-6 images">
+            <div *ngFor="let item of product['images']">
+              <img src="{{item}}" alt="image"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="data['type_dimension'] == '2D'">
+        <div *ngIf="data['type_format']" class="info-item">
+          <strong>Barcode format:</strong>
+          {{data['type_format']}} ({{data['type_dimension']}}-barcode)
+        </div>
+        <div *ngIf="data['content']" class="info-item">
+          <strong>Content:</strong>
+          <div class="code-content">
+            {{data['content']}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!loaded" class="details-item">
+      <strong>Waiting...</strong> <br/><br/>
+      If it takes more than a couple of seconds, then maybe something went wrong.
+    </div>
+  </div>
+</div>

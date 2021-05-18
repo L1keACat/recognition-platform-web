@@ -1,0 +1,57 @@
+p {
+  color: rgba(255, 255, 255, .5);
+  font-weight: 300;
+}
+
+a {
+  transition: .3s all ease;
+}
+
+h2 {
+  font-size: 20px;
+  color: white;
+}
+
+.custom-table {
+  min-width: 900px;
+}
+
+.custom-table tbody {
+  transform: rotate(180deg);
+}
+
+.custom-table tbody tr {
+  transform: rotate(-180deg);
+}
+
+.custom-table .thead tr, th {
+  padding-bottom: 30px;
+  border-top: none;
+  border-bottom: none !important;
+  color: white;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+}
+
+.custom-table tbody th, td {
+  color: rgba(255, 255, 255, .5);
+  font-weight: 400;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border: none;
+  transition: .3s all ease;
+}
+
+.custom-table a {
+  color: rgba(255, 255, 255, .3);
+}
+
+.custom-table tbody tr {
+  transition: .3s all ease;
+}
+
+.custom-table tbody tr:hover td {
+  color: white;
+  cursor: pointer;
+}

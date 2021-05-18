@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="content">
+    <h1>Search history</h1>
+    <div class="table table-striped custom-table" *ngIf="history != undefined">
+      <table style="width:100%">
+        <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Code format</th>
+          <th scope="col">Code type</th>
+          <th scope="col">Code content</th>
+          <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of history" (click)="redirect(item)">
+          <td>{{item['datetime']}}</td>
+          <td>{{item['type_format']}}</td>
+          <td>{{item['type_dimension']}}</td>
+          <td>{{item['content']}}</td>
+          <td>
+            <div *ngIf="item['status'] == 'recognized'">
+              <fa-icon [icon]="faCheckCircle" style="color: lightgreen"></fa-icon>
+              Decoded and recognized
+            </div>
+            <div *ngIf="item['status'] == 'decoded'">
+              <fa-icon [icon]="faExclamationCircle" style="color: orange"></fa-icon>
+              Decoded, not recognized
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="history == undefined">
+      History is empty.
+    </div>
+  </div>
+</div>
