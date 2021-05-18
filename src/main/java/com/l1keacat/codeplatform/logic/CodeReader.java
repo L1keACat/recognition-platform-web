@@ -1,7 +1,5 @@
 package com.l1keacat.codeplatform.logic;
 
-import com.l1keacat.codeplatform.model.RootObject;
-import com.google.gson.Gson;
 import com.google.zxing.*;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
