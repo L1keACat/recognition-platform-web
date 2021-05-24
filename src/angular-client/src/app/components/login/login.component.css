@@ -1,0 +1,56 @@
+#username-page {
+  text-align: center;
+}
+
+.username-page-container {
+  color: rgba(255, 255, 255, 0.8);
+  background: #57b846;
+  box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+  border-radius: 2px;
+  width: 100%;
+  max-width: 500px;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 35px 55px 35px;
+  min-height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: -160px auto 0;
+}
+
+.username-page-container .username-submit {
+  margin-top: 10px;
+}
+
+#username-page {
+  height: calc(100vh - 10em);
+}
+
+button {
+  box-shadow: none;
+  border: 1px solid transparent;
+  font-size: 14px;
+  outline: none;
+  line-height: 100%;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 0.6rem 1rem;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  min-height: 38px;
+}
+
+button.accent {
+  background-color: #555555;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  border: 2px solid #ff4743;
+  transition-duration: 0.4s;
+}
+
+button.accent:hover {
+  background-color: #ff4743;
+}

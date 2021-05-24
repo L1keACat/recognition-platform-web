@@ -48,7 +48,7 @@ public class CodeReader {
     public String getInfoByCode(String code) {
         String exception_msg;
         try {
-            String apiKey = "ldar0jik7cp8ojrpolmgplj17szouf";
+            String apiKey = "vg7w7n5q03nd6mgkr0l5g5wepaneu8";
             URL url = new URL("https://api.barcodelookup.com/v2/products?barcode=" + code + "&formatted=y&key=" + apiKey);
             BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
             String str;
