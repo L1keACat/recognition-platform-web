@@ -1,3 +1,5 @@
+Link to [mobile client](https://github.com/L1keACat/recognition-platform-mobile)
+
 #### Requirements
 
 - **Java 11**
